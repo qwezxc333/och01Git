@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>숫자를 입력하세요(1부터 num까지 합계)</h1>
+	<form action="Add3" name = "frm" method="get" onsubmit="return chk()">
+		숫자 : <input type="text" name="num"><p>
+		위치 : <input type="text" name="loc"><p>
+		<input type="submit" value="확인">
+	</form>
+	
+	<script type="text/javascript">
+		function chk() {
+			// 비어있으면 --> 숫자입력 + 포커스
+			//문자면 --> 숫자가 아님 헐 + focus + 입력된 글자 지우기
+			if(frm.num.value==""){
+				alert("숫자입력해주세요");
+				frm.num.focus();
+				return false;
+			}else if(isNaN(parseInt(frm.num.value))){
+				alert("숫자가아님 헐");
+				frm.num.value = "";
+				frm.num.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+	
+	
+</body>
+</html>
